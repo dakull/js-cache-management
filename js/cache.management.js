@@ -56,6 +56,7 @@ var ObjectCreator = function() {
     }
   };
 
+
 /* 
 *  class: Cache
 *  deps: -
@@ -63,7 +64,7 @@ var ObjectCreator = function() {
 *    this.cache['c27e3220e7ddbc7ab334099753efcf743d412624'] = "This is a test";
 */
 var Cache = function() {
-  console.log("Init Cache");
+  // console.log("Init Cache");
   this.cache = new Array();
 };
 
@@ -81,18 +82,18 @@ var Cache = function() {
     
     },
     addObject: function(objKey,fresh_obj) {
-      console.log( "  Add to Cache: ["+objKey.getIdOriginal()+"] "+objKey.getIdHash() );
+      // console.log( "  Add to Cache: ["+objKey.getIdOriginal()+"] "+objKey.getIdHash() );
       this.cache[ objKey.getIdHash() ] = fresh_obj;
     }
     
   };
-// end clasa CacheManager
+
 
 /* 
 *  class: CacheManager 
 *  deps: -
 *  example:
-*   this.cache.addObject(objKey,fresh_obj);
+*   this.cache.fetchObject(objKey);
 */
 var CacheManager = function() {
   this.objectCreator = new ObjectCreator();
